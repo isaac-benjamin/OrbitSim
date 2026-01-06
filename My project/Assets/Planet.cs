@@ -4,7 +4,8 @@ using System.Collections.Generic;
 public class Planet : MonoBehaviour
 {
     public int mass;
-    public Vector3Int position;
+    public Vector3Int initPosition;
+    public Vector3Int initVelocity;
 
     static readonly float g = 6.674f;
     static List<PlanetProps> planets = new List<PlanetProps>();
@@ -15,6 +16,7 @@ public class Planet : MonoBehaviour
         int id;
         float mass;
         Vector3 position;
+        Vector3 deltaPos;
         Vector3 velocity;
         Vector3 accel;
 
@@ -37,19 +39,38 @@ public class Planet : MonoBehaviour
 
             float grav = (g * mass * props.mass) / (distance*distance);
 
+            //Tweener vector now = vector representation of gravity 
+            tweener *= grav;
+
+            //Set acceleration
+            this.accel = tweener / mass;
+
         }
 
-    }   
+        internal void updateValues(){
+            velocity+=(accel*Time.deltaTime);
+            position += (velocity * Time.deltaTime);
+            
+        }
+
+        internal void TranslateGameObject(GameObject gameObject){
+            Vector3 translation = new Vector3(velocity.x, velocity.y, velocity.z)*Time.deltaTime;
+            gameObject.transform.Translate(translation);
+        }
+
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameObject.transform.SetPositionAndRotation(initPosition, Quaternion.identity);
+        planet = new PlanetProps(mass,initPosition,initVelocity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        planet.updateValues();
+        planet.TranslateGameObject(gameObject);
     }
 }
