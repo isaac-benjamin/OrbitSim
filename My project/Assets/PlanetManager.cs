@@ -13,17 +13,17 @@ public class PlanetManager : MonoBehaviour {
     //This accepts the ID 
     public event Action OnForcesUpdated;
 
-    private List<Planet> planets = new List<Planet>();
+    private List<Planet> planets = new();
     // This field keeps track of all the forces acting on a current object BEFORE the planet.UpdateValues() is called
     // After planet.UpdateValues() is called, the index corresponding to the planets force vector should be cleared
-    private List<Vector3> forces = new List<Vector3>();
+    private List<Vector3> forces = new();
 
     /*
      * Given the planet props, will return a planet object
      * Assigns ID based on planets.count
      */
     public Planet AddPlanet(Planet.Props props) {
-        Planet newest = new Planet(props, planets.Count);
+        Planet newest = new(props, planets.Count);
         planets.Add(newest);
         forces.Add(Vector3.zero);
         Debug.Log($"Added planet {newest.id}");
@@ -52,7 +52,7 @@ public class PlanetManager : MonoBehaviour {
      */
     void PopulateForces() {
         for (int i = 0; i < planets.Count; i++) {
-            for (int j = i; j < planets.Count; j++) {
+            for (int j = i+1; j < planets.Count; j++) {
                 Vector3 iToJ = FindForce(planets[i], planets[j]);
                 Vector3 jToI = iToJ * -1;
                 forces[i] += iToJ;
