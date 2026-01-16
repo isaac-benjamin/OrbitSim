@@ -7,6 +7,9 @@ public class PlanetScript : MonoBehaviour
     [SerializeField]
     public Planet.Props props;
 
+    [SerializeField]
+    private bool takePosFromTransform;
+
     private Planet planet;
 
     //Subscribe to an event that when called will fire the MovePlanet function
@@ -17,6 +20,9 @@ public class PlanetScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (takePosFromTransform) {
+            props.position = gameObject.transform.position;
+        }
         planet = PlanetManager.instance.AddPlanet( props );
         PlanetManager.instance.OnForcesUpdated += MovePlanet;
         gameObject.transform.SetPositionAndRotation(props.position, Quaternion.identity);

@@ -36,9 +36,11 @@ public class PlanetManager : MonoBehaviour {
         tweener = tweener - p1.position;
 
         float distance = tweener.magnitude;
+        Debug.Log($"Distance: {distance}");
         tweener.Normalize();
 
         float grav = (G * p1.mass * p2.mass) / (distance * distance);
+        Debug.Log($"Gravity: {grav}");
 
         //Tweener vector now = vector representation of gravity 
         tweener *= grav;
@@ -51,6 +53,7 @@ public class PlanetManager : MonoBehaviour {
      * At the end of this function every planet's index in forces should represent the force exerted on them that frame
      */
     void PopulateForces() {
+        resetForces();
         for (int i = 0; i < planets.Count; i++) {
             for (int j = i+1; j < planets.Count; j++) {
                 Vector3 iToJ = FindForce(planets[i], planets[j]);
@@ -67,6 +70,12 @@ public class PlanetManager : MonoBehaviour {
         }
     }
    
+    void resetForces() {
+        for(int i=0; i<forces.Count; i++) {
+            forces[i] = Vector3.zero;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {

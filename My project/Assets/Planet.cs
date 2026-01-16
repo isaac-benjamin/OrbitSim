@@ -20,7 +20,6 @@ public class Planet {
         this.mass = mass;
         position = pos;
         velocity = vel;
-        Debug.Log($"Planet{id} position: {position}");
     }
 
     public Planet(Props props, int id): this( props.mass, id, props.position, props.velocity) { }
@@ -29,18 +28,19 @@ public class Planet {
      * Given a force vector, updates the acceleration, velocity, and position vectors accordingly
      */
     internal void UpdateValues(Vector3 forceVec) {
-        accel = forceVec / mass;
-        velocity += (accel * Time.deltaTime);
-        position += (velocity * Time.deltaTime);
+        float t = Time.deltaTime;
+        Vector3 initVelocity = new(velocity.x,velocity.y,velocity.z);
+
+        accel = forceVec / mass; 
+        velocity += (accel * t); //velocity final = velocity initial + acceleration x time
+        position += ((initVelocity + velocity)/2) * t;  //change in x = average velocity x time
         Debug.Log($"Planet{id} update:\n " +
-            $"force received - {forceVec} \nacceleration - {accel} \nvelocity - {velocity} \nposition - {position}");
+            $"force received: {forceVec}, delta time: {t} \nacceleration: {accel} \nvelocity: {velocity} \nposition: {position}");
 
     }
 
     public void TranslateGameObject(GameObject gameObject) {
-        Vector3 translation = new Vector3(velocity.x, velocity.y, velocity.z) * Time.deltaTime;
-        Debug.Log($"Planet{id} translation: {translation}");
-        gameObject.transform.Translate(translation);
+        gameObject.transform.position = position;
     }
 
 }
