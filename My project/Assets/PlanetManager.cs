@@ -78,7 +78,7 @@ public class PlanetManager : MonoBehaviour {
     {
         PopulateForces();
         updateValues();
-        OnForcesUpdated.Invoke();
+        //OnForcesUpdated.Invoke();
     }
 
     private void Singleton() {
