@@ -31,9 +31,12 @@ public class PlanetManager : MonoBehaviour {
     }
 
     Vector3 FindForce(Planet p1, Planet p2) {
+        Vector3 t1 = p1.transform.position;
+        Vector3 t2 = p2.transform.position;
+
         //Other position - this position = vector pointing from p1 to p2
-        Vector3 tweener = new Vector3(p2.position.x, p2.position.y, p2.position.z);
-        tweener = tweener - p1.position;
+        Vector3 tweener = new Vector3(t2.x, t2.y, t2.z);
+        tweener = tweener - t1;
 
         float distance = tweener.magnitude;
         tweener.Normalize();
