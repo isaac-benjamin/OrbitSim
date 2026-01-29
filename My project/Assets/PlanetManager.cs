@@ -13,7 +13,7 @@ public class PlanetManager : MonoBehaviour {
     //This accepts the ID 
     public event Action OnForcesUpdated;
 
-    private List<Planet> planets = new();
+    public List<Planet> planets { get; private set; }
     // This field keeps track of all the forces acting on a current object BEFORE the planet.UpdateValues() is called
     // After planet.UpdateValues() is called, the index corresponding to the planets force vector should be cleared
     private List<Vector3> forces = new();
@@ -36,11 +36,11 @@ public class PlanetManager : MonoBehaviour {
         tweener = tweener - p1.position;
 
         float distance = tweener.magnitude;
-        Debug.Log($"Distance: {distance}");
+        //Debug.Log($"Distance: {distance}");
         tweener.Normalize();
 
         float grav = (G * p1.mass * p2.mass) / (distance * distance);
-        Debug.Log($"Gravity: {grav}");
+        //Debug.Log($"Gravity: {grav}");
 
         //Tweener vector now = vector representation of gravity 
         tweener *= grav;
@@ -80,6 +80,7 @@ public class PlanetManager : MonoBehaviour {
     void Awake()
     {
         Singleton();
+        this.planets = new();
     }
 
     // Update is called once per frame

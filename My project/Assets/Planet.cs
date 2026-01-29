@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Planet {
+public class Planet : ScriptableObject {
 
     public readonly int id;
-    public float mass { get; private set; }
-    public Vector3 position { get; private set; }
-    public Vector3 velocity { get; private set; }
-    public Vector3 accel { get; private set; }
+    public float mass;
+    public Vector3 position;
+    public Vector3 velocity;
+    public Vector3 accel;
 
     [System.Serializable]
     public struct Props {
@@ -34,8 +34,8 @@ public class Planet {
         accel = forceVec / mass; 
         velocity += (accel * t); //velocity final = velocity initial + acceleration x time
         position += ((initVelocity + velocity)/2) * t;  //change in x = average velocity x time
-        Debug.Log($"Planet{id} update:\n " +
-            $"force received: {forceVec}, delta time: {t} \nacceleration: {accel} \nvelocity: {velocity} \nposition: {position}");
+        //Debug.Log($"Planet{id} update:\n " +
+        //    $"force received: {forceVec}, delta time: {t} \nacceleration: {accel} \nvelocity: {velocity} \nposition: {position}");
 
     }
 

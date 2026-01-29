@@ -1,0 +1,62 @@
+:root {
+    --darkGray: rgb(60, 60, 60);
+    --accentColor: rgb(20, 20, 20);
+    --textColor: rgb(230, 230, 230);
+    color: var(--textColor);
+    -unity-font-style: normal;
+    --highlightColor: rgb(177, 177, 177);
+    --vertPadding: 3px;
+    --horizPadding: 2px;
+}
+
+#customVec3 {
+    justify-content: space-around;
+}
+
+#customVec3 Label {
+    display: none;
+}
+
+#customVec3 .unity-composite-field__input {
+    flex-direction: row;
+    flex-shrink: 1;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+#customVec3 .unity-composite-field__field {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#customVec3 #unity-text-input {
+    padding-top: var(--vertPadding);
+    padding-right: var(--horizPadding);
+    padding-bottom: var(--vertPadding);
+    padding-left: var(--horizPadding);
+    background-color: var(--darkGray);
+    border-left-color: var(--accentColor);
+    border-right-color: var(--accentColor);
+    border-top-color: var(--accentColor);
+    border-bottom-color: var(--accentColor);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-width: 0.5px;
+    border-right-width: 0.5px;
+    border-bottom-width: 0.5px;
+    border-left-width: 0.5px;
+    --unity-cursor-color: var(--textColor);
+}
+
+#customVec3 #unity-text-input:hover {
+    border-top-color: var(--highlightColor);
+    border-right-color: var(--highlightColor);
+    border-bottom-color: var(--highlightColor);
+    border-left-color: var(--highlightColor);
+    border-top-width: 0.5px;
+    border-right-width: 0.5px;
+    border-bottom-width: 0.5px;
+    border-left-width: 0.5px;
+}
