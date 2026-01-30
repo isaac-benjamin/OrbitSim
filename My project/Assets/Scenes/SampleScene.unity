@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2fc35c0d7c9c46438b5fdb394fec5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  planetWindow: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0

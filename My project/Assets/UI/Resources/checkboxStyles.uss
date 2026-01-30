@@ -1,0 +1,53 @@
+@import url("project://database/Assets/UI/Resources/sharedVars.uss?fileID=7433441132597879392&guid=3720fc967ccbcda4ea160136742b2741&type=3#sharedVars");
+
+:root {
+}
+
+#checkbox {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+}
+
+#checkbox Label {
+    display: none;
+    visibility: visible;
+}
+
+#checkbox VisualElement {
+    align-self: auto;
+    align-items: auto;
+    aspect-ratio: 1;
+    flex-grow: 1;
+}
+
+#checkbox #unity-checkmark {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: var(--secondaryGray);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-color: var(--accentColor);
+    border-bottom-color: var(--accentColor);
+    border-left-color: var(--accentColor);
+    border-right-color: var(--accentColor);
+    border-top-left-radius: 23%;
+    border-top-right-radius: 23%;
+    border-bottom-right-radius: 23%;
+    border-bottom-left-radius: 23%;
+    aspect-ratio: 1;
+    width: 20px;
+    height: auto;
+    flex-grow: 1;
+}
+
+#checkbox VisualElement:hover #unity-checkmark {
+    border-top-color: var(--highlightColor);
+    border-bottom-color: var(--highlightColor);
+    border-left-color: var(--highlightColor);
+    border-right-color: var(--highlightColor);
+}

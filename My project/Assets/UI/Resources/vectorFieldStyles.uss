@@ -1,16 +1,11 @@
 :root {
-    --darkGray: rgb(60, 60, 60);
-    --accentColor: rgb(20, 20, 20);
-    --textColor: rgb(230, 230, 230);
     color: var(--textColor);
     -unity-font-style: normal;
-    --highlightColor: rgb(177, 177, 177);
-    --vertPadding: 3px;
-    --horizPadding: 2px;
 }
 
 #customVec3 {
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 #customVec3 Label {
@@ -25,16 +20,19 @@
 }
 
 #customVec3 .unity-composite-field__field {
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 #customVec3 #unity-text-input {
+    --vertPadding: 2px;
+    --horizPadding: 2px;
+
     padding-top: var(--vertPadding);
     padding-right: var(--horizPadding);
     padding-bottom: var(--vertPadding);
     padding-left: var(--horizPadding);
-    background-color: var(--darkGray);
+    background-color: var(--secondaryGray);
     border-left-color: var(--accentColor);
     border-right-color: var(--accentColor);
     border-top-color: var(--accentColor);
@@ -43,10 +41,10 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    border-top-width: 0.5px;
-    border-right-width: 0.5px;
-    border-bottom-width: 0.5px;
-    border-left-width: 0.5px;
+    border-top-width: 0.25px;
+    border-right-width: 0.25px;
+    border-bottom-width: 0.25px;
+    border-left-width: 0.25px;
     --unity-cursor-color: var(--textColor);
 }
 
@@ -55,8 +53,13 @@
     border-right-color: var(--highlightColor);
     border-bottom-color: var(--highlightColor);
     border-left-color: var(--highlightColor);
-    border-top-width: 0.5px;
-    border-right-width: 0.5px;
-    border-bottom-width: 0.5px;
-    border-left-width: 0.5px;
+    border-top-width: 0.25px;
+    border-right-width: 0.25px;
+    border-bottom-width: 0.25px;
+    border-left-width: 0.25px;
+}
+
+#customVec3 #unity-y-input {
+    margin-right: 3%;
+    margin-left: 3%;
 }

@@ -1,0 +1,7 @@
+:root{
+	--darkGray: rgb(60, 60, 60);
+    --secondaryGray: rgb(77,77,77);
+    --accentColor: rgb(34,34,34);
+    --textColor: rgb(230, 230, 230);
+    --highlightColor: rgb(177, 177, 177);
+}

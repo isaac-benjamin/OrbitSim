@@ -1,3 +1,5 @@
+@import url("project://database/Assets/UI/Resources/sharedVars.uss?fileID=7433441132597879392&guid=3720fc967ccbcda4ea160136742b2741&type=3#sharedVars");
+
 :root {
 }
 
@@ -13,7 +15,6 @@ Label {
 }
 
 .menuItem {
-    background-color: rgb(74, 74, 74);
     color: rgb(214, 214, 214);
     font-size: 28px;
     -unity-text-align: middle-center;
@@ -28,37 +29,66 @@ Label {
     border-bottom-width: 0;
     border-left-width: 2px;
     margin-left: 0;
-}
-
-.planetField {
-    flex-grow: 1;
-    flex-direction: column;
-    -unity-text-align: upper-center;
-    align-items: center;
-}
-
-.fieldLabels {
-    font-size: 19px;
-    -unity-text-align: middle-center;
-    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Examples%20&%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&guid=4beb055f07aaff244873dec698d0363e&type=3#Roboto-Bold");
-}
-
-.propertyLabel {
-    width: 40%;
+    background-color: var(--secondaryGray);
 }
 
 .planetWindowRow {
     padding-right: 8px;
     padding-left: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
+.propertyName {
+    flex-grow: 0;
+    flex-direction: column;
+    -unity-text-align: upper-left;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 2%;
+}
+
 .valuesContainer {
     flex-direction: row;
-    justify-content: space-between;
-    align-content: flex-end;
-    width: 40%;
+    justify-content: space-around;
+    align-content: center;
+    width: auto;
+    flex-grow: 1;
+    margin-left: 10%;
+}
+
+.enableArrows {
+    width: 10%;
+}
+
+.statusWindow {
+    flex-grow: 0;
+    width: 12%;
+    background-color: rgb(54, 54, 54);
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: rgb(228, 228, 228);
+    transform-origin: bottom;
+    translate: 0% 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-color: rgb(162, 162, 162);
+    border-right-color: rgb(162, 162, 162);
+    border-top-color: rgb(162, 162, 162);
+    border-bottom-color: rgb(162, 162, 162);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    justify-content: center;
+    aspect-ratio: auto;
+}
+
+#Menu {
+    background-color: var(--darkGray);
 }
