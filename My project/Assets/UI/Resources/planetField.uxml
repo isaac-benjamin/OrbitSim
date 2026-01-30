@@ -1,13 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Template name="customCheckBox" src="project://database/Assets/UI/Resources/customCheckBox.uxml?fileID=9197481963319205126&amp;guid=bf173c7b9b5917b4d8964cb1219385ab&amp;type=3#customCheckBox"/>
     <ui:Template name="customVectorField" src="project://database/Assets/UI/Resources/customVectorField.uxml?fileID=9197481963319205126&amp;guid=1c4e63499c0124645b41c114bde4de0b&amp;type=3#customVectorField"/>
-    <ui:VisualElement name="planetField" data-source-type="Planet, Assembly-CSharp" data-source="" class="planetWindowRow" style="width: 100%;">
-        <ui:Instance template="customCheckBox" class="enableArrows">
-
-        </ui:Instance>
+    <ui:VisualElement name="planetField" data-source-type="Planet, Assembly-CSharp" data-source="" class="planetWindowRow" style="width: 100%; flex-direction: row;">
+        <ui:Instance template="customCheckBox" class="enableArrows"/>
         <ui:Label text="Position" emoji-fallback-support="false" name="propertyName" class="propertyLabel propertyName" style="font-size: 18px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&amp;guid=4beb055f07aaff244873dec698d0363e&amp;type=3#Roboto-Bold&quot;); -unity-text-align: middle-left;"/>
-        <ui:Instance template="customVectorField" name="TemplateContainer" class="valuesContainer" style="align-content: flex-end;">
-        
-        </ui:Instance>
+        <ui:Instance template="customVectorField" name="TemplateContainer" class="valuesContainer" style="align-content: flex-end;"/>
     </ui:VisualElement>
 </ui:UXML>

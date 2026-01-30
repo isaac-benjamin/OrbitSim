@@ -25,11 +25,18 @@ Label {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     border-top-width: 0;
-    border-right-width: 2px;
+    border-right-width: 1px;
     border-bottom-width: 0;
-    border-left-width: 2px;
-    margin-left: 0;
-    background-color: var(--secondaryGray);
+    border-left-width: 1px;
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    border-top-color: var(--accentColor);
+    border-right-color: var(--accentColor);
+    border-bottom-color: var(--accentColor);
+    border-left-color: var(--accentColor);
+    background-color: var(--darkGray);
 }
 
 .planetWindowRow {
@@ -37,17 +44,22 @@ Label {
     padding-left: 8px;
     margin-bottom: 5px;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
+.enableArrows {
+    width: 10%;
+}
+
 .propertyName {
-    flex-grow: 0;
+    flex-grow: 1;
     flex-direction: column;
     -unity-text-align: upper-left;
     align-items: center;
-    margin-left: 10%;
+    margin-left: 5%;
     margin-right: 2%;
+    max-width: none;
 }
 
 .valuesContainer {
@@ -56,11 +68,9 @@ Label {
     align-content: center;
     width: auto;
     flex-grow: 1;
-    margin-left: 10%;
-}
-
-.enableArrows {
-    width: 10%;
+    margin-left: 0%;
+    max-width: 30%;
+    min-width: 65px;
 }
 
 .statusWindow {
@@ -91,4 +101,8 @@ Label {
 
 #Menu {
     background-color: var(--darkGray);
+}
+
+.menuItem:hover {
+    background-color: var(--secondaryGray);
 }
