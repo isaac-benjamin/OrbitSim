@@ -10,6 +10,9 @@ public class PlanetScript : MonoBehaviour
     [SerializeField]
     private bool takePosFromTransform;
 
+    [SerializeField]
+    UIScript uiscript;
+
     private Planet planet;
 
     //Subscribe to an event that when called will fire the MovePlanet function
@@ -26,6 +29,9 @@ public class PlanetScript : MonoBehaviour
         planet = PlanetManager.instance.AddPlanet( props );
         PlanetManager.instance.OnForcesUpdated += MovePlanet;
         gameObject.transform.SetPositionAndRotation(props.position, Quaternion.identity);
+
+        uiscript.MakeStatusWindow(ref planet);
+
     }
 
     //// Update is called once per frame

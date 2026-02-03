@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2fc35c0d7c9c46438b5fdb394fec5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  planetWindow: {fileID: 0}
+  windowTemplate: {fileID: 9197481963319205126, guid: afc458c7347338d4dae7e1b8b871039a, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +549,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7550032698638217023, guid: 435545f54104df44686b323007f5e9c4, type: 3}
+      propertyPath: uiscript
+      value: 
+      objectReference: {fileID: 381716412}
     - target: {fileID: 7550032698638217023, guid: 435545f54104df44686b323007f5e9c4, type: 3}
       propertyPath: props.mass
       value: 80

@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class Planet : ScriptableObject {
+public class Planet  {
 
     public readonly int id;
     public float mass;
     public Vector3 position;
     public Vector3 velocity;
     public Vector3 accel;
+    public Vector3 force;
 
     [System.Serializable]
     public struct Props {
@@ -28,6 +29,7 @@ public class Planet : ScriptableObject {
      * Given a force vector, updates the acceleration, velocity, and position vectors accordingly
      */
     internal void UpdateValues(Vector3 forceVec) {
+        force = forceVec;
         float t = Time.deltaTime;
         Vector3 initVelocity = new(velocity.x,velocity.y,velocity.z);
 
