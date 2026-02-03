@@ -75,7 +75,7 @@ Label {
 
 .statusWindow {
     flex-grow: 0;
-    width: 12%;
+    width: 100%;
     background-color: rgb(54, 54, 54);
     height: 100%;
     flex-direction: column;
@@ -105,4 +105,10 @@ Label {
 
 .menuItem:hover {
     background-color: var(--secondaryGray);
+}
+
+.statusWindowContainer {
+    width: 12%;
+    margin-left: 10px;
+    margin-right: 10px;
 }

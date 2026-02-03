@@ -3,6 +3,7 @@ using UnityEngine;
 public class Planet  {
 
     public readonly int id;
+    public string name;
     public float mass;
     public Vector3 position;
     public Vector3 velocity;

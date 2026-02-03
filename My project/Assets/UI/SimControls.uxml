@@ -1,5 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Template name="planetStatusWindow" src="project://database/Assets/UI/Resources/planetStatusWindow.uxml?fileID=9197481963319205126&amp;guid=afc458c7347338d4dae7e1b8b871039a&amp;type=3#planetStatusWindow"/>
     <Style src="project://database/Assets/UI/Styles.uss?fileID=7433441132597879392&amp;guid=4a8c3c3b202fdbf47a7e227e0d481985&amp;type=3#Styles"/>
     <ui:VisualElement name="Base" style="flex-grow: 1; height: auto; justify-content: space-between;">
         <ui:VisualElement name="Menu" view-data-key="" tooltip="" style="flex-grow: 0; width: auto; height: 5%; aspect-ratio: auto; flex-direction: row; justify-content: center; align-content: flex-start;">
@@ -7,8 +6,6 @@
             <ui:Button text="" name="pausePlay" icon-image="project://database/Assets/UI/icons/play.svg?fileID=7388822144124034973&amp;guid=e4df83bddcf943c47952b71ba9323d3c&amp;type=3#play" enable-rich-text="false" double-click-selects-word="false" triple-click-selects-line="false" class="menuItem" style="margin-right: 0; margin-top: 0; margin-bottom: 0; margin-left: 0; width: 5%;"/>
             <ui:Button text="" name="reset" icon-image="project://database/Assets/UI/icons/reset.svg?fileID=7388822144124034973&amp;guid=91a1fa75d4553924499e869d20a3939a&amp;type=3#reset" double-click-selects-word="false" class="menuItem" style="width: 5%; border-right-width: 2px;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="planetHouse" style="flex-grow: 0; height: 25%; flex-direction: row;">
-            <ui:Instance template="planetStatusWindow" name="planetStatusWindow" style="height: 100%;"/>
-        </ui:VisualElement>
+        <ui:VisualElement name="planetHouse" style="flex-grow: 0; height: 25%; flex-direction: row;"/>
     </ui:VisualElement>
 </ui:UXML>

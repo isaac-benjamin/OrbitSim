@@ -26,6 +26,7 @@ public class PlanetManager : MonoBehaviour {
         Planet newest = new(props, planets.Count);
         planets.Add(newest);
         forces.Add(Vector3.zero);
+        UIScript.instance.MakeStatusWindow(newest);
         Debug.Log($"Added planet {newest.id}");
         return newest;
     }

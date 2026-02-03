@@ -5,30 +5,23 @@ using UnityEngine.UIElements;
 
 public class UIScript : MonoBehaviour
 {
+    public static UIScript instance;
 
     private UIDocument uiDoc;
     [SerializeField] private VisualTreeAsset windowTemplate;
     private VisualElement planetWindowContainer;
-    private Planet x; 
+    private Planet x;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    private void Awake() {
+        Singleton();
         uiDoc = gameObject.GetComponent<UIDocument>();
         planetWindowContainer = uiDoc.rootVisualElement.Q<VisualElement>("planetHouse");
-
-        x = new(20, 8, new(1, 44, 5), new(9, 0, 9));
-        var myAsset = uiDoc.rootVisualElement.Q<Vector3Field>();
-        myAsset.style.backgroundColor = new Color(100, 0, 0);
-        myAsset.dataSource = x;
-        //examplePlanet = PlanetManager.instance.planets[0];
-        myAsset.SetBinding("value", new DataBinding { dataSourcePath = new PropertyPath(nameof(x.position)) });
     }
 
-    public VisualTreeAsset MakeStatusWindow (ref Planet planet) {
+    public void MakeStatusWindow (Planet planet) {
         TemplateContainer window = windowTemplate.Instantiate();
         window.dataSource = planet;
+        window.AddToClassList("statusWindowContainer");
 
         PropertyPath[] bindings = {new PropertyPath(nameof(planet.position)),new PropertyPath(nameof(planet.velocity)),
             new PropertyPath(nameof(planet.accel)), new PropertyPath(nameof(planet.force))  };
@@ -40,10 +33,16 @@ public class UIScript : MonoBehaviour
             vecField.SetBinding("value", new DataBinding { dataSourcePath = bindings[i] });
         }
 
-        uiDoc.rootVisualElement.Add(window);
+        planetWindowContainer.Add(window);
 
-        return null;
     }
-    
+    private void Singleton() {
+        if (instance == null) {
+            instance = this;
+        } else {
+            Debug.Log("Two managers");
+            Destroy(gameObject);
+        }
+    }
 
 }
