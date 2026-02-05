@@ -1,3 +1,4 @@
+using Unity.Properties;
 using UnityEngine;
 
 public class Planet  {
@@ -5,10 +6,14 @@ public class Planet  {
     public readonly int id;
     public string name;
     public float mass;
-    public Vector3 position;
-    public Vector3 velocity;
-    public Vector3 accel;
-    public Vector3 force;
+    [CreateProperty]
+    public Vector3 position { get; set; }
+    [CreateProperty]
+    public Vector3 velocity { get; set; }
+    [CreateProperty]
+    public Vector3 accel { get; set; }
+    [CreateProperty]
+    public Vector3 force { get; set; }
 
     [System.Serializable]
     public struct Props {
@@ -19,6 +24,7 @@ public class Planet  {
 
     public Planet(float mass, int id, Vector3 pos, Vector3 vel) {
         this.id = id;
+        this.name = $"Planet {id}";
         this.mass = mass;
         position = pos;
         velocity = vel;

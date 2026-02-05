@@ -23,14 +23,15 @@ public class UIScript : MonoBehaviour
         window.dataSource = planet;
         window.AddToClassList("statusWindowContainer");
 
-        PropertyPath[] bindings = {new PropertyPath(nameof(planet.position)),new PropertyPath(nameof(planet.velocity)),
-            new PropertyPath(nameof(planet.accel)), new PropertyPath(nameof(planet.force))  };
+        PropertyPath[] bindings = {new (nameof(planet.position)),new ("velocity"),
+            new ("accel"), new (nameof(planet.force))  };
         String[] fieldNames = { "position", "velocity", "acceleration", "force" };
 
-        for (int i = 0; i < bindings.Length; i++) {
 
+        for (int i = 0; i < bindings.Length; i++) {
             var vecField = window.Query(fieldNames[i]).Descendents<Vector3Field>().First();
-            vecField.SetBinding("value", new DataBinding { dataSourcePath = bindings[i] });
+            vecField.SetBinding("value", new DataBinding { dataSourcePath = bindings[i], bindingMode=BindingMode.ToTarget});
+            //vecField.dataSourcePath = PropertyPath.F
         }
 
         planetWindowContainer.Add(window);

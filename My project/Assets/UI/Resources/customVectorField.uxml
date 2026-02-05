@@ -2,5 +2,8 @@
     <Style src="project://database/Assets/UI/Styles.uss?fileID=7433441132597879392&amp;guid=4a8c3c3b202fdbf47a7e227e0d481985&amp;type=3#Styles"/>
     <Style src="project://database/Assets/UI/Resources/vectorFieldStyles.uss?fileID=7433441132597879392&amp;guid=27030cfd064986140b06722563433b66&amp;type=3#vectorFieldStyles"/>
     <ui:Vector3Field label="Vec3 Field" name="customVec3" data-source-type="Planet, Assembly-CSharp" style="flex-direction: row; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;">
+        <Bindings>
+            <ui:DataBinding property="value" bindingMode="ToTarget" />
+        </Bindings>
     </ui:Vector3Field>
 </ui:UXML>
